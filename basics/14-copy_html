@@ -1,4 +1,2 @@
-bash
 #!/bin/bash
-cp -u *.html ..
-
+for f in *.html; do [ ! -e "../$f" ] || [ "$f" -nt "../$f" ] && cp -v "$f" ..; done
