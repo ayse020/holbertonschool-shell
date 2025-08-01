@@ -1,21 +1,4 @@
+bash
 #!/bin/bash
+cp -u *.html ..
 
-# HTML fayllarını tapmaq üçün
-shopt -s nullglob
-html_files=(*.html)
-
-if [ ${#html_files[@]} -eq 0 ]; then
-    echo "Diqqət: Cari qovluqda .html faylı tapılmadı" >&2
-    exit 0
-fi
-
-for file in "${html_files[@]}"
-do
-    if [ ! -e "../$file" ] || [ "$file" -nt "../$file" ]
-    then
-        echo "$file faylı köçürülür..." >&1
-        cp -v "$file" ../
-    else
-        echo "$file faylı artıq ən son versiyadadır, köçürülmədi" >&1
-    fi
-done
