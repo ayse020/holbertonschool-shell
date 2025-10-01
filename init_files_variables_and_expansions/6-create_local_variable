@@ -1,3 +1,2 @@
 #!/bin/bash
 BEST="School"
-echo "Variable BEST has been created with value: $BEST"
